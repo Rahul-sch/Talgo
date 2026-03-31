@@ -12,6 +12,7 @@ import pandas as pd
 import yfinance as yf
 import uuid
 from datetime import datetime, timedelta
+from typing import Optional
 from streamlit_lightweight_charts import renderLightweightCharts
 
 # ─── PAGE CONFIG ──────────────────────────────────────────────
@@ -478,7 +479,7 @@ def render_replay_controls():
 # MODULE D: PAPER TRADING ENGINE
 # ═══════════════════════════════════════════════════════════════
 
-def execute_trade(side: str, stop_loss: float | None, take_profit: float | None, quantity: float):
+def execute_trade(side: str, stop_loss: Optional[float], take_profit: Optional[float], quantity: float):
     """Open a new paper trade at the current candle's close price."""
     idx = st.session_state["current_index"]
     entry_price = float(st.session_state["df"].iloc[idx]["close"])
