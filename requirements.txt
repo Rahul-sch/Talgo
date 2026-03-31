@@ -1,0 +1,5 @@
+streamlit>=1.30
+streamlit-lightweight-charts>=0.7
+yfinance>=0.2.30
+pandas>=2.0
+numpy>=1.24
